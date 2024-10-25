@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration and Login</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #2C3E50; /* Dark background */
+            color: #ECF0F1; /* Light text */
+        }
+        .container {
+            max-width: 700px;
+            margin: 60px auto;
+            padding: 30px;
+            background-color: #34495E; /* Slightly lighter background for forms */
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #1ABC9C; /* Teal color for heading */
+        }
+        .form-control {
+            background-color: #ECF0F1; /* Light background for inputs */
+            border: 1px solid #bdc3c7;
+            color: #2C3E50; /* Dark text for inputs */
+        }
+        .form-control:focus {
+            box-shadow: none;
+            border-color: #1ABC9C;
+        }
+        .btn-primary {
+            background-color: #1ABC9C;
+            border-color: #1ABC9C;
+            transition: background-color 0.3s ease-in-out;
+        }
+        .btn-primary:hover {
+            background-color: #16A085;
+            border-color: #16A085;
+        }
+        .toggle-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: #1ABC9C;
+            cursor: pointer;
+        }
+        .forgot-password {
+            text-align: right;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Registration & Login Form Container -->
+    <div class="container">
+        <!-- Registration Form -->
+        <div id="register-form" style="display: none;">
+            <h2>Sign Up</h2>
+            <form>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter your full name">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                </div>
+                <div class="mb-3">
+                    <label for="role" class="form-label">Role</label>
+                    <select class="form-select" id="role">
+                        <option value="farmer">Farmer</option>
+                        <option value="distributor">Distributor</option>
+                        <option value="ngo">NGO</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Enter your password">
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+            </form>
+            <p class="text-center toggle-link" onclick="toggleForms()">Already have an account? Log In</p>
+        </div>
+
+        <!-- Login Form -->
+        <div id="login-form" style="display:block;">
+            <h2>Log In</h2>
+            <form>
+                <div class="mb-3">
+                    <label for="login-email" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="login-email" placeholder="Enter your email">
+                </div>
+                <div class="mb-3">
+                    <label for="login-password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="login-password" placeholder="Enter your password">
+                </div>
+                <div class="forgot-password">
+                    <a href="#" class="text-decoration-none text-light">Forgot password?</a>
+                </div>
+                <!-- <button type="submit" class="btn btn-primary w-100">Log In</button> -->
+                <button type="submit" class="btn btn-primary w-100" onclick="redirectToDashboard(event)">Log In</button>
+            </form>
+            <p class="text-center toggle-link" onclick="toggleForms('register')">New here? Sign Up</p>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // JavaScript to toggle between Registration and Login forms
+        window.onload = function() {
+            const registerForm = document.getElementById('register-form');
+            const loginForm = document.getElementById('login-form');
+
+            // Check if the URL has the 'register' parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('register')) {
+                // Show the register form
+                registerForm.style.display = 'block';
+                loginForm.style.display = 'none';
+            } else {
+                // Default to showing the login form
+                registerForm.style.display = 'none';
+                loginForm.style.display = 'block';
+            }
+        };
+
+        function toggleForms() {
+            const registerForm = document.getElementById('register-form');
+            const loginForm = document.getElementById('login-form');
+
+            if (registerForm.style.display === 'none') {
+                registerForm.style.display = 'block';
+                loginForm.style.display = 'none';
+            } else {
+                registerForm.style.display = 'none';
+                loginForm.style.display = 'block';
+            }
+        }
+
+        function redirectToDashboard(event) {
+            event.preventDefault(); // Prevent the form from submitting
+            // Add any login validation logic here if needed
+            window.location.href = 'userdashboard.html'; // Redirect to dashboard.html
+        }
+
+    </script>
+    <script>
+        // Custom JavaScript to handle collapsing of other menus
+        document.querySelectorAll('#sidebar .nav-link[data-bs-toggle="collapse"]').forEach(function (link) {
+            link.addEventListener('click', function () {
+                var target = document.querySelector(this.getAttribute('data-bs-target'));
+                if (target) {
+                    document.querySelectorAll('#sidebar .collapse.show').forEach(function (collapse) {
+                        if (collapse !== target) {
+                            var collapseInstance = bootstrap.Collapse.getInstance(collapse);
+                            if (collapseInstance) collapseInstance.hide();
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

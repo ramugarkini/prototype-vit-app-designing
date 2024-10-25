@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Farming and Food Distribution</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #2C3E50; /* Dark background for better contrast */
+            color: #ECF0F1; /* Light text color */
+        }
+        .hero-section {
+            background-size: cover;
+            background-position: center;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 120px 20px;
+        }
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+        }
+        .hero-section p {
+            font-size: 1.4rem;
+        }
+        .btn-primary, .btn-outline-light {
+            padding: 12px 24px;
+            font-size: 1.2rem;
+        }
+        .features-section {
+            padding: 60px 20px;
+            background-color: #34495E; /* Darker section background */
+        }
+        .feature-box {
+            background-color: #1ABC9C; /* Teal tile */
+            color: #FFFFFF; /* White text */
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+        }
+        .feature-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .cta-section {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #E74C3C; /* Red background for emphasis */
+            color: #FFFFFF;
+        }
+        .cta-section h2 {
+            margin-bottom: 20px;
+        }
+        .cta-section p {
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1>Smart Farming and Food Distribution</h1>
+            <p>Empowering farmers and reducing hunger with technology</p>
+            <!-- <a href="#features" class="btn btn-primary btn-lg">Learn More</a> -->
+            <a href="#" class="btn btn-primary btn-lg" onclick="login()">Login</a>
+            <a href="#" class="btn btn-outline-light btn-lg" onclick="signUp()">Sign Up</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <h2 class="text-center mb-5">Platform Features</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <h3>Smart Farming</h3>
+                        <p>Leverage IoT and AI for precision agriculture, reducing resource usage while boosting yield.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <h3>Food Distribution</h3>
+                        <p>Connect surplus food with people in need, reducing waste and fighting hunger.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <h3>Marketplace</h3>
+                        <p>Farmers can sell their produce directly to consumers or cooperatives, ensuring fair pricing.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section id="signup" class="cta-section">
+        <div class="container">
+            <h2>Join Us Today</h2>
+            <p>Sign up to start your journey towards smarter farming and sustainable food distribution.</p>
+            <button class="btn btn-light btn-lg" onclick="contactUs()">Contact &#38; Support</button>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // JavaScript for the Sign Up button
+        function signUp() {
+             window.location.href = 'login.html?register'; // Redirect to login.html
+        }
+        function login() {
+            // Perform any login logic here
+            window.location.href = 'login.html'; // Redirect to login.html
+        }
+        function contactUs() {
+            // Perform any login logic here
+            window.location.href = 'contactandsupport.html'; // Redirect to login.html
+        }
+    </script>
+    <script>
+        // Custom JavaScript to handle collapsing of other menus
+        document.querySelectorAll('#sidebar .nav-link[data-bs-toggle="collapse"]').forEach(function (link) {
+            link.addEventListener('click', function () {
+                var target = document.querySelector(this.getAttribute('data-bs-target'));
+                if (target) {
+                    document.querySelectorAll('#sidebar .collapse.show').forEach(function (collapse) {
+                        if (collapse !== target) {
+                            var collapseInstance = bootstrap.Collapse.getInstance(collapse);
+                            if (collapseInstance) collapseInstance.hide();
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

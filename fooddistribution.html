@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Distribution</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #2C3E50;
+            color: #ECF0F1;
+            margin: 0;
+            padding: 0;
+        }
+        #wrapper {
+            display: flex;
+            height: 100vh;
+        }
+        #sidebar {
+            width: 250px;
+            background-color: #1A252F; /* Dark sidebar background */
+            height: 100%;
+            color: white;
+            padding-top: 20px;
+            position: fixed; /* Make sidebar fixed */
+        }
+        #sidebar a {
+            color: #ECF0F1;
+            text-decoration: none;
+        }
+        #sidebar .nav-link {
+            padding: 10px 20px;
+        }
+        #sidebar .sidebar-heading {
+            padding: 10px 20px;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+        #sidebar .collapse-menu {
+            background-color: #1A252F; /* Matches sidebar */
+        }
+        #content {
+            margin-left: 250px; /* Adjust content margin for sidebar */
+            padding: 30px;
+            flex-grow: 1;
+        }
+        .container {
+            margin-top: 20px;
+        }
+        h2 {
+            color: #1ABC9C;
+            margin-bottom: 20px;
+        }
+        .card {
+            background-color: #34495E;
+            border-radius: 10px;
+            border: none;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+        .card-header {
+            background-color: #2980B9;
+            color: white;
+            border-radius: 10px 10px 0 0;
+            padding: 15px;
+        }
+        .card-body {
+            padding: 20px;
+        }
+        .btn-primary {
+            background-color: #1ABC9C;
+            border-color: #1ABC9C;
+        }
+        .btn-primary:hover {
+            background-color: #16A085;
+            border-color: #16A085;
+        }
+        .form-control {
+            background-color: #ECF0F1;
+            border: 1px solid #bdc3c7;
+            color: #2C3E50;
+        }
+        .form-control:focus {
+            box-shadow: none;
+            border-color: #1ABC9C;
+        }
+        .list-group-item {
+            background-color: #34495E;
+            color: #ECF0F1;
+            border: none;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        .list-group-item:hover {
+            background-color: #2980B9;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="wrapper">
+        <!-- Sidebar Menu -->
+        <nav id="sidebar">
+            <div class="sidebar-header text-center">
+                <h3><a href="index.html"><i class="bi bi-box-arrow-right"></i></a> Zero Hunger</h3>
+            </div>
+            <hr>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#dashboardMenu" aria-expanded="false" aria-controls="dashboardMenu">
+                        <i class="bi bi-house-door"></i> Dashboard
+                    </a>
+                    <div class="collapse" id="dashboardMenu">
+                        <ul class="nav flex-column collapse-menu ms-3">
+                            <li class="nav-item">
+                                <a class="nav-link" href="userdashboard.html">
+                                    <i class="bi bi-person"></i> User Dashboard
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="admindashboard.html">
+                                    <i class="bi bi-shield-lock"></i> Admin Dashboard
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="notifications.html">
+                                    <i class="bi bi-bell"></i> Notifications and Alerts
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#mastersMenu" aria-expanded="false" aria-controls="mastersMenu">
+                        <i class="bi bi-gear"></i> Masters
+                    </a>
+                    <div class="collapse" id="mastersMenu">
+                        <ul class="nav flex-column collapse-menu ms-3">
+                            <li class="nav-item">
+                                <a class="nav-link" href="donor.html">
+                                    <i class="bi bi-person-heart"></i> Donor
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="distributor.html">
+                                    <i class="bi bi-truck"></i> Distributor
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="recipient.html">
+                                    <i class="bi bi-person-check"></i> Recipient
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#productionMenu" aria-expanded="false" aria-controls="productionMenu">
+                        <i class="bi bi-crop"></i> Production
+                    </a>
+                    <div class="collapse" id="productionMenu">
+                        <ul class="nav flex-column collapse-menu ms-3">
+                            <li class="nav-item">
+                                <a class="nav-link" href="farmerprofile.html"><i class="bi bi-person"></i> Farmer Profile</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="farmmonitoringsystem.html"><i class="bi bi-binoculars"></i> Farm Monitoring System</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="foodsurpluslist.html"><i class="bi bi-box"></i> Food Surplus List</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="trainingandresourcesforfarmers.html"><i class="bi bi-book"></i> Training and Resources for Farmers</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="weatherandcroppredictionscreen.html"><i class="bi bi-cloud-sun"></i> Weather and Crop Prediction Screen</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#salesMenu" aria-expanded="false" aria-controls="salesMenu">
+                        <i class="bi bi-cash"></i> Sales
+                    </a>
+                    <div class="collapse" id="salesMenu">
+                        <ul class="nav flex-column collapse-menu ms-3">
+                            <li class="nav-item">
+                                <a class="nav-link" href="marketplaceforfarmersdirectsales.html"><i class="bi bi-shop"></i> Marketplace for Farmers (Direct Sales)</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#donorMenu" aria-expanded="false" aria-controls="donorMenu">
+                        <i class="bi bi-hand-thumbs-up"></i> Donor
+                    </a>
+                    <div class="collapse" id="donorMenu">
+                        <ul class="nav flex-column collapse-menu ms-3">
+                            <li class="nav-item">
+                                <a class="nav-link" href="fooddistribution.html"><i class="bi bi-cup-straw"></i> Food Distribution</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#reportMenu" aria-expanded="false" aria-controls="reportMenu">
+                        <i class="bi bi-file-earmark-text"></i> Report
+                    </a>
+                    <div class="collapse" id="reportMenu">
+                        <ul class="nav flex-column collapse-menu ms-3">
+                            <li class="nav-item">
+                                <a class="nav-link" href="transactionhistory.html"><i class="bi bi-clock-history"></i> Transaction History</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Content Section -->
+        <div id="content">
+            <div class="container">
+                <h2>Food Distribution</h2>
+
+                <!-- Filters Section -->
+                <div class="card">
+                    <div class="card-header">
+                        Filters
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-3 mb-3">
+                                    <label for="foodTypeFilter" class="form-label">Food Type</label>
+                                    <select class="form-select" id="foodTypeFilter">
+                                        <option value="all">All</option>
+                                        <option value="vegetables">Vegetables</option>
+                                        <option value="fruits">Fruits</option>
+                                        <option value="grains">Grains</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <label for="locationFilter" class="form-label">Location</label>
+                                    <input type="text" class="form-control" id="locationFilter" placeholder="Enter location">
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <label for="availabilityFilter" class="form-label">Availability</label>
+                                    <input type="date" class="form-control" id="availabilityFilter">
+                                </div>
+                                <div class="col-md-3 mb-3 d-flex align-items-end">
+                                    <button type="submit" class="btn btn-primary w-100">Apply Filters</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Food Items List -->
+                <div class="card">
+                    <div class="card-header">
+                        Available Food Items
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <h5>Fresh Apples</h5>
+                                <p>Quantity: 50 kg</p>
+                                <p>Location: Farmville</p>
+                                <p>Availability: 2024-09-15</p>
+                                <a href="#" class="btn btn-primary">Contact Distributor</a>
+                            </li>
+                            <li class="list-group-item">
+                                <h5>Organic Carrots</h5>
+                                <p>Quantity: 30 kg</p>
+                                <p>Location: Green Acres</p>
+                                <p>Availability: 2024-09-20</p>
+                                <a href="#" class="btn btn-primary">Contact Distributor</a>
+                            </li>
+                            <!-- More items can be added here -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Custom JavaScript to handle collapsing of other menus
+        document.querySelectorAll('#sidebar .nav-link[data-bs-toggle="collapse"]').forEach(function (link) {
+            link.addEventListener('click', function () {
+                var target = document.querySelector(this.getAttribute('data-bs-target'));
+                if (target) {
+                    document.querySelectorAll('#sidebar .collapse.show').forEach(function (collapse) {
+                        if (collapse !== target) {
+                            var collapseInstance = bootstrap.Collapse.getInstance(collapse);
+                            if (collapseInstance) collapseInstance.hide();
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Profile Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #2C3E50; /* Dark background */
+            color: #ECF0F1; /* Light text */
+        }
+        #wrapper {
+            display: flex;
+        }
+        #sidebar {
+            width: 250px;
+            background-color: #1A252F; /* Dark sidebar background */
+            height: 100vh;
+            color: white;
+            padding-top: 20px;
+            position: fixed;
+        }
+        #sidebar a {
+            color: #ECF0F1;
+            text-decoration: none;
+        }
+        #sidebar .nav-link {
+            padding: 10px 20px;
+        }
+        #sidebar .sidebar-heading {
+            padding: 10px 20px;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+        #content {
+            flex-grow: 1;
+            margin-left: 250px; /* Offset for the sidebar */
+            padding: 20px;
+        }
+        .container {
+            padding: 30px;
+            margin-top: 20px;
+        }
+        h2 {
+            color: #1ABC9C; /* Teal color for headings */
+            margin-bottom: 20px;
+        }
+        .form-control {
+            background-color: #ECF0F1;
+            border: 1px solid #bdc3c7;
+            color: #2C3E50;
+        }
+        .form-control:focus {
+            box-shadow: none;
+            border-color: #1ABC9C;
+        }
+        .btn-primary {
+            background-color: #1ABC9C;
+            border-color: #1ABC9C;
+        }
+        .btn-primary:hover {
+            background-color: #16A085;
+            border-color: #16A085;
+        }
+        .card {
+            background-color: #34495E; /* Slightly lighter background */
+            border-radius: 10px;
+            border: none;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+        .card-header {
+            background-color: #2980B9;
+            color: white;
+            border-radius: 10px 10px 0 0;
+            padding: 15px;
+        }
+        .btn-outline-light {
+            color: white;
+            border-color: white;
+        }
+        .btn-outline-light:hover {
+            background-color: white;
+            color: #2C3E50;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header text-center">
+                <h3><a href="index.html"><i class="bi bi-box-arrow-right"></i></a> Zero Hunger</h3>
+            </div>
+            <hr>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#dashboardMenu" aria-expanded="false" aria-controls="dashboardMenu">
+                        <i class="bi bi-house-door"></i> Dashboard
+                    </a>
+                    <div class="collapse" id="dashboardMenu">
+                        <ul class="nav flex-column collapse-menu ms-3">
+                            <li class="nav-item">
+                                <a class="nav-link" href="userdashboard.html">
+                                    <i class="bi bi-person"></i> User Dashboard
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="admindashboard.html">
+                                    <i class="bi bi-shield-lock"></i> Admin Dashboard
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="notifications.html">
+                                    <i class="bi bi-bell"></i> Notifications and Alerts
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#mastersMenu" aria-expanded="false" aria-controls="mastersMenu">
+                        <i class="bi bi-gear"></i> Masters
+                    </a>
+                    <div class="collapse" id="mastersMenu">
+                        <ul class="nav flex-column collapse-menu ms-3">
+                            <li class="nav-item">
+                                <a class="nav-link" href="donor.html">
+                                    <i class="bi bi-person-heart"></i> Donor
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="distributor.html">
+                                    <i class="bi bi-truck"></i> Distributor
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="recipient.html">
+                                    <i class="bi bi-person-check"></i> Recipient
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#productionMenu" aria-expanded="false" aria-controls="productionMenu">
+                        <i class="bi bi-crop"></i> Production
+                    </a>
+                    <div class="collapse" id="productionMenu">
+                        <ul class="nav flex-column collapse-menu ms-3">
+                            <li class="nav-item">
+                                <a class="nav-link" href="farmerprofile.html"><i class="bi bi-person"></i> Farmer Profile</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="farmmonitoringsystem.html"><i class="bi bi-binoculars"></i> Farm Monitoring System</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="foodsurpluslist.html"><i class="bi bi-box"></i> Food Surplus List</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="trainingandresourcesforfarmers.html"><i class="bi bi-book"></i> Training and Resources for Farmers</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="weatherandcroppredictionscreen.html"><i class="bi bi-cloud-sun"></i> Weather and Crop Prediction Screen</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#salesMenu" aria-expanded="false" aria-controls="salesMenu">
+                        <i class="bi bi-cash"></i> Sales
+                    </a>
+                    <div class="collapse" id="salesMenu">
+                        <ul class="nav flex-column collapse-menu ms-3">
+                            <li class="nav-item">
+                                <a class="nav-link" href="marketplaceforfarmersdirectsales.html"><i class="bi bi-shop"></i> Marketplace for Farmers (Direct Sales)</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#donorMenu" aria-expanded="false" aria-controls="donorMenu">
+                        <i class="bi bi-hand-thumbs-up"></i> Donor
+                    </a>
+                    <div class="collapse" id="donorMenu">
+                        <ul class="nav flex-column collapse-menu ms-3">
+                            <li class="nav-item">
+                                <a class="nav-link" href="fooddistribution.html"><i class="bi bi-cup-straw"></i> Food Distribution</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#reportMenu" aria-expanded="false" aria-controls="reportMenu">
+                        <i class="bi bi-file-earmark-text"></i> Report
+                    </a>
+                    <div class="collapse" id="reportMenu">
+                        <ul class="nav flex-column collapse-menu ms-3">
+                            <li class="nav-item">
+                                <a class="nav-link" href="transactionhistory.html"><i class="bi bi-clock-history"></i> Transaction History</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content -->
+        <div id="content">
+            <!-- Farmer Profile Container -->
+            <div class="container">
+                <h2>Farmer Profile</h2>
+                <div class="container">
+                    <div class="row">
+                        <!-- Personal Information Tile -->
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    Edit Personal Information
+                                </div>
+                                <div class="card-body">
+                                    <form>
+                                        <div class="mb-3">
+                                            <label for="fullName" class="form-label">Full Name</label>
+                                            <input type="text" class="form-control" id="fullName" value="John Doe">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="email" class="form-label">Email</label>
+                                            <input type="email" class="form-control" id="email" value="john.doe@example.com">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Farm Information Tile -->
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    Edit Farm Information
+                                </div>
+                                <div class="card-body">
+                                    <form>
+                                        <div class="mb-3">
+                                            <label for="location" class="form-label">Farm Location</label>
+                                            <input type="text" class="form-control" id="location" value="Green Valley">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="crops" class="form-label">Crops Being Grown</label>
+                                            <input type="text" class="form-control" id="crops" value="Wheat, Corn">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-3">
+                        <!-- IoT Devices Tile -->
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    Edit IoT Devices
+                                </div>
+                                <div class="card-body">
+                                    <form>
+                                        <div class="mb-3">
+                                            <label for="deviceId" class="form-label">Device ID</label>
+                                            <input type="text" class="form-control" id="deviceId" value="12345">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="deviceType" class="form-label">Device Type</label>
+                                            <select class="form-select" id="deviceType">
+                                                <option value="soil" selected>Soil Sensor</option>
+                                                <option value="weather">Weather Sensor</option>
+                                                <option value="water">Water Sensor</option>
+                                            </select>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Crop Status Tile -->
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    Edit Crop Status
+                                </div>
+                                <div class="card-body">
+                                    <form>
+                                        <div class="mb-3">
+                                            <label for="cropHealth" class="form-label">Crop Health</label>
+                                            <input type="text" class="form-control" id="cropHealth" value="Good">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="growthStage" class="form-label">Growth Stage</label>
+                                            <select class="form-select" id="growthStage">
+                                                <option value="seedling">Seedling</option>
+                                                <option value="vegetative" selected>Vegetative</option>
+                                                <option value="flowering">Flowering</option>
+                                                <option value="harvest">Harvest</option>
+                                            </select>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col-md-12">
+                            <button class="btn btn-primary w-100">Save Changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Custom JavaScript to handle collapsing of other menus
+        document.querySelectorAll('#sidebar .nav-link[data-bs-toggle="collapse"]').forEach(function (link) {
+            link.addEventListener('click', function () {
+                var target = document.querySelector(this.getAttribute('data-bs-target'));
+                if (target) {
+                    document.querySelectorAll('#sidebar .collapse.show').forEach(function (collapse) {
+                        if (collapse !== target) {
+                            var collapseInstance = bootstrap.Collapse.getInstance(collapse);
+                            if (collapseInstance) collapseInstance.hide();
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

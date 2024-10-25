@@ -1,0 +1,89 @@
+develop html 
+
+Are you a 
+NGO - center
+donar
+recipient
+
+Donar : 
+food validity
+date time
+food name
+quantity - multiple rows
+
+donar name
+reason
+Address
+ph#
+email id
+-----------
+
+NGO: dashboard
+Food distribute dates :
+(circles - rounds, graphs, maps)
+# of senders
+Hungers fulfilled count
+-------
+Report : 
+Date of donatation
+name 
+type
+Date of 
+---
+NGO -> Receipent feedback:
+Donar -> NGO feedback:
+NGO -> Receipent feedback:
+
+----
+Receipent:
+Orphanise name
+No of people
+Location
+Date
+time
+checkbox - need
+if yes - show details to NGO
+
+Applications:
+Hotels
+Private Party's
+
+
+Donar -> NGO -> Receipent - (Orphanage) 
+                               |
+                        |------------|
+                       Yes           No
+                        |            
+                  NGO - notification
+NGO - report:
+
+
+
+doner : f, ho, fod
+distributer : ngo, 
+receiptent : charity, trust, orpanage, beggers
+
+zero hunger
+dashboard
+- admin dashboard
+- notifications and alerts
+masters 
+- doner
+- distributer
+- receiptent
+production
+- farmer profile 
+- farm monitoring sys
+- food surplus listing page
+- training and resources for farmers
+- weather and crop prediction screen
+sales
+- market place for farmers direct sales
+donar
+- food distribution
+report
+- transaction history
+Contact & Support 
+
+food bank
+- doner -> distributer -> receiptent / doner -> receiptent

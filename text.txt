@@ -1,0 +1,67 @@
+1. Home Page (Landing Page)
+Introduction to the platform
+Overview of features (smart farming, food distribution, etc.)
+Call to action buttons (Sign Up, Learn More)
+2. User Registration and Login Page
+Sign-up form for new users (farmers, distributors, NGOs)
+Login form for existing users
+Forgot password functionality
+3. User Dashboard
+Overview of user-specific data (e.g., farm status, food distribution metrics)
+Quick actions (create a new farm, list surplus food, monitor crop health)
+Notifications or alerts (upcoming weather events, low soil moisture)
+4. Farmer Profile Page
+Edit personal and farm information (location, crops being grown, farming methods)
+Add IoT devices (e.g., sensors for monitoring soil or weather)
+Update current crop status (health, growth stage)
+5. Farm Monitoring Screen
+Real-time data on crop health, soil moisture, weather conditions
+Visual representation of the farm with IoT sensor data (charts or graphs)
+AI-driven recommendations (e.g., when to irrigate, apply fertilizer)
+6. Food Surplus Listing Page
+Form to list surplus food for donation or sale
+Fields for food type, quantity, and location
+Date of availability and best-before date
+Choose distribution options (pickup or delivery)
+7. Food Distribution Marketplace
+Browse food available for donation or sale
+Filters to sort by location, type of food, or availability
+Detailed view of each food item with contact details for the farmer or distributor
+8. Nutritional Information and Resources Page
+Information on nutrition and balanced diet recommendations
+Customizable meal plans based on local food availability
+Educational resources on improving diet and combating malnutrition
+9. Training and Resources for Farmers
+Video tutorials and articles on smart farming practices (e.g., irrigation, organic farming)
+Webinars and events for farmers to learn new techniques
+Access to best practices for sustainable agriculture
+10. Weather and Crop Prediction Screen
+Display real-time weather updates
+Forecast future weather events for better crop planning
+AI-based crop yield predictions based on weather and farming conditions
+11. Marketplace for Farmers (Direct Sales)
+Farmers can list their produce for direct sale to consumers or cooperatives
+Include product images, descriptions, and pricing
+Option for buyers to purchase directly through the platform or contact the seller
+12. Transaction History Page
+A record of all completed sales or food donations
+Details like transaction amounts, date, buyer/seller information
+Downloadable receipts or invoices
+13. Notifications and Alerts Page
+Alerts for upcoming weather changes or events impacting farming
+Notifications about surplus food requests or new marketplace orders
+Updates on system changes or new features
+14. Admin Dashboard
+Manage users (farmers, distributors, NGOs)
+Monitor platform activity and analytics (number of listings, food distributed, etc.)
+Approve or reject listings, manage reported content
+15. Contact and Support Page
+Contact form for users to reach support
+FAQs related to smart farming, food distribution, and platform usage
+Chatbot or live chat feature for immediate assistance
+16. About Us / Mission Page
+Information about the platform’s mission to combat hunger and promote sustainable farming
+Details about partnerships and stakeholders involved
+17. Success Stories / Testimonials Page
+Showcase success stories from farmers, NGOs, or consumers who benefited from the platform
+Include images or video testimonials
